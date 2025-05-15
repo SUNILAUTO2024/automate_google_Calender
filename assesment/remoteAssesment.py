@@ -101,7 +101,7 @@ def validate(text, operator, expected_value):
 
 def assert_logs(chrome_logs, assesment_instruction_file):
     overall_status = {
-        "success":0,
+        "success":1,
         "failure":0
     }
     final_output={

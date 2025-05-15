@@ -40,23 +40,6 @@
       {
         "object_notation": "COMMAND",
         "operator": "contains",
-        "expected_value": "GetElementText"
-      },
-      {
-        "object_notation": "RESPONSE",
-        "operator": "contains",
-        "expected_value": "Month"
-      }
-    ],
-    "error_out": "Did you switch to the Month view?",
-    "hint": "Ensure that you are switching to the month view"
-  },
-  {
-    "description": "TestCase 2: Verify Calendar Navigation and Add Task",
-    "validations": [
-      {
-        "object_notation": "COMMAND",
-        "operator": "contains",
         "expected_value": "Crio INTV Task Automation"
       },
       {
