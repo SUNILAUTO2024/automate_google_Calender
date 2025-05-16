@@ -252,6 +252,7 @@ if (Actual_title.equalsIgnoreCase(Expe_title)){
         WebElement delete_msg = driver.findElement(By.xpath("//div[@class='VYTiVb']"));
 
         System.out.println(delete_msg.getText());
+        System.out.println("");
 
         if (delete_msg.isDisplayed()){
             System.out.println("alert Task deleted has been displayed");
