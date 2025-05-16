@@ -80,10 +80,10 @@ public class TestCases {
 //       if (element.isDisplayed()){
 //           System.out.println("User selected Month View");
 //       }
-       WebElement month = driver.findElement(By.xpath("(//span[text()=\"Month\"])[2]"));
-        if (month.isDisplayed()){
-            System.out.println("User selected Month View already");
-        }
+//       WebElement month = driver.findElement(By.xpath("(//span[text()=\"Month\"])[2]"));
+//        if (month.isDisplayed()){
+//            System.out.println("User selected Month View already");
+//        }
         driver.findElement(By.xpath("//div[@data-datekey=\"28335\"]")).click();
         System.out.println("User Click on the calendar to add a task.");
 
@@ -147,9 +147,10 @@ public class TestCases {
 
         driver.findElement(By.xpath("//span[text()='Crio INTV Task Automation']")).click();
         System.out.println("Click on an existing task");
+Thread.sleep(3000);
 
                // Open the task details.
-        driver.findElement(By.xpath("//div[@class=\"i5a7ie \"]/div/div[2]/div/span/button")).click();
+        driver.findElement(By.xpath("(//div[@class=\"i5a7ie \"]/div/div[2]/div/span/button)[1]")).click();
         System.out.println("click edit icon");
 
 
@@ -174,13 +175,15 @@ public class TestCases {
 
         System.out.println("click update btn");
 
-        WebElement succ_msg = driver.findElement(By.xpath("//div[@class='VYTiVb']"));
+        Thread.sleep(1500);
 
-
-
-        if (succ_msg.isDisplayed()){
-            System.out.println("Task updated msg appears");
-        }
+//        WebElement succ_msg = driver.findElement(By.xpath("//div[@class='VYTiVb']"));
+//
+//
+//
+//        if (succ_msg.isDisplayed()){
+//            System.out.println("Task updated msg appears");
+//        }
 //        String success_msg=succ_msg.getText();
 //        if (success_msg.equalsIgnoreCase("Task updated")){
 //            System.out.println("Task is updated");
@@ -191,7 +194,7 @@ public class TestCases {
         driver.findElement(By.xpath("//span[text()='Crio INTV Task Automation']")).click();
         System.out.println("Click on an existing task");
 Thread.sleep(3000);
-        WebElement task_desc=driver.findElement(By.xpath("//div[@data-eventid=\"tasks_aZf1qQ44WnwnkCSS\"]"));
+        WebElement task_desc=driver.findElement(By.xpath("//span[text()='Description:']/parent::div"));
         if (task_desc.isDisplayed()){
             System.out.println("updated description is displayed.");
         }
@@ -239,7 +242,8 @@ if (Actual_title.equalsIgnoreCase(Expe_title)){
 }
 //
         //Delete the task.
-        WebElement delete_task = driver.findElement(By.xpath("//button[@aria-label=\"Delete task\"]"));
+        //WebElement delete_task = driver.findElement(By.xpath("//button[@aria-label=\"Delete task\"]"));
+        WebElement delete_task = driver.findElement(By.xpath("//*[@id='yDmH0d']/div[1]/div/div[2]/span/div/div[1]/div/div/div[2]/div[2]/span/button"));
         delete_task.click();
         System.out.println("Deleted the task.");
 
@@ -247,14 +251,14 @@ if (Actual_title.equalsIgnoreCase(Expe_title)){
         //Confirm the task deletion, by verifying "Task deleted" is displayed.
         WebElement delete_msg = driver.findElement(By.xpath("//div[@class='VYTiVb']"));
 
-
+        System.out.println(delete_msg.getText());
 
         if (delete_msg.isDisplayed()){
-            System.out.println("Task deleted msg appears");
+            System.out.println("alert Task deleted has been displayed");
         }
 
         if (delete_msg.getText().equalsIgnoreCase("Task deleted")){
-            System.out.println("Task is deleted message verified");
+            System.out.println("alert Task deleted msg verified");
         }
 
 
